@@ -879,6 +879,7 @@ Request.prototype.callback = function(err, res) {
   }
 
   err.response = res;
+  err.url = this.url;
   if (this._maxRetries) err.retries = this._retries - 1;
 
   // only emit error event if there is a listener
